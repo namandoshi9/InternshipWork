@@ -1,0 +1,44 @@
+1. Write a Python program to print "Hello, World!".
+2. Create a variable and store your name in it. Print a message that includes your name.
+3. Calculate the sum of two numbers and print the result.
+4. Write a program to find the square root of a given number.
+5. Create a list of your favorite fruits and print each fruit on a new line.
+6. Write a function to check if a number is even or odd.
+7. Given a list, write a program to print only the even numbers.
+8. Write a Python program to find the maximum of three numbers.
+9. Create a dictionary with at least three key-value pairs and print the values.
+10. Write a program to check if a given string is a palindrome.
+11. Implement a simple calculator that can perform addition, subtraction, multiplication, and division.
+12. Write a function to calculate the factorial of a number.
+13. Create a list of numbers and find the sum of all the elements in the list.
+14. Write a program to convert Fahrenheit to Celsius.
+15. Implement a basic guessing game where the user has to guess a number between 1 and 10.
+16. Write a program to find the length of a given string.
+17. Create a tuple with three elements and print them.
+18. Write a function to check if a number is prime.
+19. Given a list of integers, write a program to find the average of the numbers.
+20. Implement a program to generate a simple multiplication table for a given number.
+
+
+
+1. Write a program that takes a user's name as input and prints a personalized greeting.
+2. Create a list of integers, loop through the list, and print only the numbers greater than 5.
+3. Write a function that checks if a given string is a palindrome.
+4. Implement a simple calculator function that can perform addition, subtraction, multiplication, and division.
+5. Given a list of strings, create a new list that contains only the strings with more than 3 characters.
+6. Write a program that generates a dictionary where keys are numbers from 1 to 5, and values are their squares.
+7. Implement a loop that iterates over a range of numbers (e.g., 1 to 10) and prints "Even" for even numbers and "Odd" for odd numbers.
+8. Create a tuple with different data types and print each element using a for loop.
+9. Write a function that calculates the factorial of a given number.
+10. Given a list of numbers, calculate and print the average.
+11. Implement a guessing game where the user has to guess a number between 1 and 10.
+12. Create a set of colors and print each color on a new line.
+13. Write a program that converts temperatures from Fahrenheit to Celsius using a function.
+14. Check if a given number is prime using a function.
+15. Create a list of fruits and a corresponding set of unique fruits. Print both lists.
+16. Implement a program that generates a multiplication table for a given number.
+17. Write a program that finds the maximum value in a list.
+18. Given two lists, create a new list that contains common elements between them.
+19. Check if a given year is a leap year using if-else statements.
+20. Write a program that counts the occurrences of each character in a given string.
+

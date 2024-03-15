@@ -1,0 +1,24 @@
+Donors table:
+donor_id (Primary Key)
+donor_name
+donor_age
+donor_blood_type
+donor_contact
+
+Camps table:
+camp_id (Primary Key)
+camp_name
+camp_location
+camp_date
+
+Donations table:
+donation_id (Primary Key)
+donor_id (Foreign Key referencing donors table)
+camp_id (Foreign Key referencing camps table)
+donation_date
+donation_quantity
+
+
+
+
+

@@ -1,0 +1,131 @@
+simple project management system. Let's create tables for "Projects," "Tasks," and "Assignments." Each project can have multiple tasks, and each task can have multiple assignments (assignments being the allocation of tasks to specific individuals).
+
+USE for postgres sql (pgadmin4)
+
+create database pms;
+
+-- CREATE TABLE Projects (
+--     project_id SERIAL PRIMARY KEY,
+--     project_name VARCHAR(100) NOT NULL,
+--     project_description TEXT,
+--     start_date DATE,
+--     end_date DATE
+-- );
+
+-- CREATE TABLE Tasks (
+--     task_id SERIAL PRIMARY KEY,
+--     task_name VARCHAR(100) NOT NULL,
+--     task_description TEXT,
+--     project_id INT,
+--     FOREIGN KEY (project_id) REFERENCES Projects(project_id)
+-- );
+
+-- CREATE TABLE Assignments (
+--     assignment_id SERIAL PRIMARY KEY,
+--     task_id INT,
+--     assigned_to VARCHAR(100),
+--     due_date DATE,
+--     status VARCHAR(20) CHECK (status IN ('Pending', 'InProgress', 'Completed')),
+--     FOREIGN KEY (task_id) REFERENCES Tasks(task_id)
+-- );
+
+
+---------------------------------
+EASY LEVAL QUESTIONS
+--------------------------------
+
+1. **Update Query:**
+   - Update the status of the assignment with ID 3 to 'Completed'.
+
+2. **Delete Query:**
+   - Delete the project with ID 2 from the Projects table.
+
+3. **Where Clause:**
+   - Retrieve all tasks from the Tasks table where the project_id is 1.
+
+4. **Group By Clause:**
+   - Find the count of tasks for each project from the Tasks table.
+
+5. **Having Clause:**
+   - Find projects with more than 2 tasks from the Tasks table.
+
+6. **Aggregate Functions:**
+   - Calculate the total number of assignments from the Assignments table.
+
+7. **Union:**
+   - Combine the list of project names from Projects table with the list of task names from Tasks table.
+
+8. **Union All:**
+   - Combine the list of project names from Projects table with the list of task names from Tasks table, including duplicates.
+
+9. **Intersect:**
+   - Find the common tasks between Project 1 and Project 2 from the Tasks table.
+
+10. **And Operator:**
+    - Retrieve all tasks from the Tasks table where the project_id is 1 and the task name contains 'Create'.
+
+11. **Or Operator:**
+    - Retrieve all assignments from the Assignments table where the status is 'Pending' or 'InProgress'.
+
+12. **Null Values:**
+    - Find all projects from the Projects table where the end_date is NULL.
+
+13. **Not Null Values:**
+    - Find all assignments from the Assignments table where the assigned_to field is not NULL.
+
+14. **Like Operator (Wildcard %):**
+    - Retrieve all assignments from the Assignments table where the assigned_to field starts with 'J'.
+
+15. **Between Operator:**
+    - Retrieve all assignments from the Assignments table where the due_date is between '2023-03-01' and '2023-03-31'.
+
+===========================================
+
+
+1. Retrieve all project names and their descriptions.
+2. List all tasks with their names and descriptions, along with the project name they belong to.
+3. Find the total number of tasks for each project.
+4. Display all projects that have not started yet (where the start date is null).
+5. Show all tasks that have not been assigned to anyone yet.
+6. List all tasks that are overdue (where the end date has passed).
+7. Find the project with the earliest start date.
+8. Display the task with the latest due date.
+9. List all projects along with the total number of tasks assigned to each project.
+10. Show the percentage of completed tasks for each project.
+11. Find the user who is assigned the maximum number of tasks.
+12. Display all tasks for a specific project (you can choose any project).
+13. List all projects sorted by their end date in descending order.
+14. Show all tasks that are in progress (status is 'InProgress').
+15. Find the average duration (in days) of tasks for each project.
+
+
+====================================================
+
+16. **Subquery:**
+    - Find all projects from the Projects table where the end date is greater than the start date.
+
+17. **Order By:**
+    - Retrieve all tasks from the Tasks table ordered by project_id in ascending order.
+
+18. **Limit:**
+    - Retrieve the first 5 assignments from the Assignments table.
+
+19. **Offset:**
+    - Retrieve assignments from the Assignments table skipping the first 3 rows.
+
+20. **Distinct:**
+    - Retrieve distinct project names from the Projects table.
+
+23. **Aggregate Functions with Group By and Order By:**
+    - Find the total number of tasks for each project and order the results by the total number of tasks in descending order.
+
+24. **Subquery with IN Operator:**
+    - Retrieve all assignments from the Assignments table where the task_id is in the set of task IDs associated with Project 1.
+
+25. **Self-Join:**
+    - Retrieve project names and their corresponding end dates where the end date is later than the end date of Project 1.
+
+
+
+
+

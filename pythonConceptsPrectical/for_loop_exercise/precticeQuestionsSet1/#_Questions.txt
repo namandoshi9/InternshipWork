@@ -1,0 +1,17 @@
+Write a Python program using a for loop to print the numbers from 1 to 10.
+
+Calculate and print the sum of squares of the numbers from 1 to 5 using a for loop.
+
+Write a Python program to print the multiplication table of 7 using a for loop.
+
+Use a for loop to print a countdown from 10 to 1.
+
+Write a program to calculate the factorial of a given number using a for loop.
+
+Create a program that prints all prime numbers between 10 and 50 using a for loop.
+
+Write a program to check if a given number is a palindrome using a for loop.
+
+Generate and print the first 10 numbers in the Fibonacci series using a for loop.
+
+print pettern p1,p2,...

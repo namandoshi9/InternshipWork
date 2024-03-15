@@ -1,0 +1,98 @@
+HOSTEL MANAGEMENT SYSTEM Create basic structure for a hostel management system, allowing you to manage students, rooms, hostel blocks, room allocations, fees, and visitors. 
+
+1. Rooms: To store information about rooms in the hostel.
+==> room_id INT PRIMARY KEY, room_number VARCHAR(10), capacity INT, occupancy INT, hostel_block VARCHAR(20)
+
+2. Students: To store information about students residing in the hostel.
+==> student_id INT PRIMARY KEY, name VARCHAR(100), dob DATE, gender CHAR(1), phone VARCHAR(20),
+    email VARCHAR(100), address VARCHAR(255), room_id INT, FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
+
+3. Hostel_Block: To store information about hostel blocks/buildings.
+==> block_id INT PRIMARY KEY, block_name VARCHAR(50)
+
+4. Room_Allocations: To track the allocation of rooms to students.
+==> allocation_id INT PRIMARY KEY, student_id INT, room_id INT, allocation_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id), FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
+
+5. Fees: To store information about fees paid by students.
+==> fee_id INT PRIMARY KEY, student_id INT, amount DECIMAL(10, 2), payment_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+
+6. Visitors: To track information about visitors to the hostel.
+==> visitor_id INT PRIMARY KEY, visitor_name VARCHAR(100), purpose VARCHAR(255), visit_date DATE, student_id INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+
+**Insert Date Based on Your Work**
+
+**Update Queries:**
+1. Update the phone number of a student with ID 1001 to '123-456-7890'.
+2. Update the room capacity of room number '101' to 4.
+3. Update the email address of all students from 'example.com' domain to 'newdomain.com'.
+4. Update the gender of all students in room number '102' to 'F'.
+5. Update the hostel block name of the hostel block with ID 1 to 'New Block Name'.
+
+**Delete Queries:**
+1. Delete the record of the student with ID 1005.
+2. Delete all rooms with zero occupancy.
+3. Delete all visitors who visited before the year 2023.
+4. Delete all records of students whose names start with 'A'.
+5. Delete all records from the Fees table where the payment date is older than 1 year.
+
+**Select Queries:**
+1. Retrieve the names and phone numbers of all students.
+2. Retrieve the room numbers and capacities of all rooms in hostel block 'Block A'.
+3. Retrieve the names of all students who are male.
+4. Retrieve the room numbers and names of all students living in single occupancy rooms.
+
+
+**Wildcard Queries:**
+1. Retrieve the names of all students whose names start with 'J'.
+2. Retrieve the email addresses of all students with a Gmail domain.
+3. Retrieve the names of all students containing 'Doe' anywhere in their name.
+4. Retrieve the room numbers of all rooms on the 1st floor (rooms whose numbers start with '1').
+5. Retrieve the names of all students where the second letter of their name is 'a'.
+
+**Subquery Queries:**
+1. Retrieve the names of students who live in rooms with a capacity greater than 3.
+2. Retrieve the names of students who have not paid their fees yet.
+3. Retrieve the room numbers and capacities of all rooms in hostel block 'Block B'.
+4. Retrieve the names of students who live in rooms with the highest occupancy.
+5. Retrieve the names of students who live in rooms with a capacity greater than the average room capacity.
+
+**Aggregate Function Queries:**
+1. Calculate the average capacity of all rooms.
+2. Calculate the total number of students in the hostel.
+3. Calculate the maximum fee amount paid by any student.
+4. Calculate the average age of students.
+5. Count the number of rooms with occupancy greater than 2.
+
+**Queries with HAVING, BETWEEN, etc.:**
+1. Retrieve the room numbers and capacities of rooms with a capacity between 2 and 4.
+2. Retrieve the names and email addresses of students who have paid fees greater than $100.
+3. Retrieve the names and phone numbers of students who were born between 2000 and 2002.
+4. Retrieve the names and email addresses of students who have more than one visitor.
+
+**Queries with ORDER BY:**
+1. Retrieve the names of students in ascending order of their names.
+2. Retrieve the room numbers and capacities of rooms in descending order of their capacities.
+3. Retrieve the names and fees paid by students in descending order of the fee amount.
+4. Retrieve the names and visit dates of visitors in ascending order of the visit dates.
+5. Retrieve the names and ages of students in descending order of their ages.
+
+
+
+**ALTER KEY WORD**
+1. Add a new column 'emergency_contact' to the Students table for storing emergency contact information.
+2. Add a foreign key constraint to the Room_Allocations table referencing the Students table for the 'student_id' column.
+3. Add a default value of 'Pending' to the 'status' column in the Fees table.
+4. Add a unique constraint to the 'email' column in the Students table to ensure email addresses are unique.
+5. Add a check constraint to the Rooms table to ensure that the 'occupancy' column value is never negative.
+6. Rename the column 'phone' to 'contact_number' in the Students table.
+7. Drop the 'emergency_contact' column from the Students table.
+8. Rename the table 'Hostel_Block' to 'Blocks'.
+9. Change the data type of the 'amount' column in the Fees table from DECIMAL to NUMERIC.
+
+
+
+
+

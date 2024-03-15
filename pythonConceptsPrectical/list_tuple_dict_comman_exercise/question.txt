@@ -1,0 +1,21 @@
+#q1 balnk list to convert tuple
+#q2 list to convert tuple
+#q3 nested list to tuple
+#q4 balnk list to convert dict
+#q5 list to convert dict hint:indexing odd/even
+#q6 nested list to dict
+#q7 balnk tuplw to convert list
+#q8 tuplw to convert list
+#q9 nested tuplw to list
+#q10 balnk tuplw to convert dict
+#q11 tuplw to convert dict
+#q12 nested tuplw to dict
+#q13 balnk dict to convert list
+#q14 dict to convert list
+#q15 dict dict to nested list
+#q16 balnk dict to convert tuple
+#q16 dict to convert tuple
+#q17 nested dict to nested tuple
+#q18 nested list to nested tuple
+#q18 nested list to nested dict
+#q18 nested tuple to nested dict

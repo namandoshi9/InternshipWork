@@ -1,0 +1,29 @@
+1. **Simple Lambda Expression:**
+   Write a lambda function that takes two parameters and returns their sum.
+
+2. **Square Function using Lambda:**
+   Create a lambda function to calculate the square of a given number.
+
+3. **Filter Even Numbers:**
+   Use a lambda function with the `filter` function to filter out even numbers from a list.
+
+4. **Multiply with a Constant:**
+   Write a lambda function that takes a number and multiplies it by a constant (e.g., 5).
+
+5. **Find Maximum using Lambda:**
+   Use the `max` function with a lambda function to find the maximum of two numbers.
+
+6. **Convert Celsius to Fahrenheit:**
+   Create a lambda function that converts a temperature in Celsius to Fahrenheit using the formula: `F = (C * 9/5) + 32`.
+
+7. **Sort List of Tuples:**
+   Sort a list of tuples based on the second element of each tuple using a lambda function and the `sorted` function.
+
+8. **Check for Palindrome using Lambda:**
+   Write a lambda function that checks whether a given string is a palindrome.
+
+9. **Power of Two:**
+   Create a lambda function to calculate the power of 2 for a given exponent.
+
+10. **Extract First Character from List of Strings:**
+    Use the `map` function with a lambda function to extract the first character from each string in a list.

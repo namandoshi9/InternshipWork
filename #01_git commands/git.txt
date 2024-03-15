@@ -1,0 +1,157 @@
+
+---------New folder-------
+
+local 
+create a foldergit 
+1. git init(for initlization)
+2. git add . (. add all file)
+3. git commit -m "update files on local"(-m for print massge)
+
+github 
+create a new repository without create e readme.md file
+
+4. git branch -M main (change branch (if required))
+5. git remote add origin gitlink (origin is alias)
+6. git push -u origin main (-u is upstream)
+
+
+-------------------------
+
+
+--------Already exist folder-----------
+
+local
+1. git add .
+2. git commit -m "update files on local"
+
+github 
+create a new repository without create e readme.md file
+
+3. git branch -M main (change branch (if required))
+4. git remote add origin gitlink
+5. git push -u origin main
+
+
+---------------------------------------
+
+
+--------Direct push on remote---------
+
+1. git add .
+2. git commit -m "update files on remote
+3. git push -u origin main
+
+--------------------------------------
+
+
+
+-----------------Commands for uses-------------------
+
+
+* cls (cler cmd/terminal/bash)
+
+* git commit -a -m "product2 modified" (add and commit both in one command)
+
+* git rm filename (tracke file remove)
+
+* git mv file1.txt file.txt(move/rename file)
+
+* git pull (fatch or marge repo to local)
+
+1. git status
+2. git --version
+3. git config
+4. git config -l
+5. git config --global user.name (check username)
+6. git config --global user.name "naman" (add username)
+7. git config --global user.email
+8. git config --global user.email "naman@gmail.com"
+9. git add file1.txt
+10. git add .
+11. git add file1.txt file2.txt file3.html (all file)
+12. git log (check history)
+13. git tag tagname (access commit without key)
+    be carefull after work commited are deleted.ex. f1 f2 f3 f3 is tage f4 f5 so f4 f5 is deleted/remove
+14. git tag --list
+15. git tag -a tagname -m "print message"
+16. git checkout tagname
+17. git tag -d tagname (delete)
+18. git reset file1.txt (unstage)
+19. git rm --cached file.txt
+20. git add pro* (use start all with pro name ex.product1.txt product2.txt)
+21. git diff (use show change in file)
+22. git diff --stage
+23. git diff product2.txt
+24. git log -p (history with show data where changes and what changes)
+25. git reflog (small/short history)
+26. git reset HEAD file.txt (for unstage)
+27. git reset HEAD -p (for specific change)
+28. git revert HEAD(last commit change/rollback)
+29. git revert commitID(for specific commit)
+30. git remote -v
+31. git remote remove origin
+32. git remote show origin
+33. git clon path(link) gitRepo get remote to local
+34. git add .gitignore
+
+
+------------------------------------------------------------
+
+
+
+
+
+
+-----------------------Conflict merge(BRANCH)-----------------
+
+1. git branch (check)
+2. git branch feature1 (create a new branch)
+3. git checkout feature1 (switched to branch)
+  (after that we can create a new file in same folder but branch work diff/curr branch)
+4. git chrckout -b feature2 (create a new brach and siwtch branch both in one)
+5. git branch -d branchname (delete branch after marge use -d)
+6. git branch -D branchname (delete branch before marge use -D)
+7. marge file
+-> when marge(git checkout master)
+-> after marge (git merge feature1)
+-> Fast-forward also work for merge
+
+
+when we will marge after the complete work file/code
+
+-> rebase (use for complete transfer one branch to other branch)
+-> git rebase feature1(f1 transfer to f2)
+-> git stash(we can not use commit we can use stash) 
+-> git stash pop(for retreve/ return code)
+-> git stash list
+-> git stash drop
+
+
+------------------------------------------------------
+
+
+
+
+
+---------------------Theory---------------------
+
+
+snapshot(capture): 
+-> a snapshot is last working code as a run (photo-snake lader 2nd stage and 3rd stage snake so we can use 2nd stage /last code run use as it is working conditions) snapshots capture lastt all data
+-> every commit create every snapshots
+
+What is commite:
+-> permenents save the repo
+
+Head: 
+-> most recently commit history or branch main
+
+Tag: 
+-> tage use with commite and mark specific poit
+
+rollback: 
+-> previous commite and series of back any code like as 1 to 10 commite but we want to slove bug 7-8 commite so we can use a rollback
+
+
+
+------------------------------------------------

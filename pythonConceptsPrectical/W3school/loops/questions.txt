@@ -1,0 +1,60 @@
+Certainly! Here's a list of 20 easy questions for Python exercises using both `for` loop and `while` loop:
+
+### For Loop Questions:
+1. Print the numbers from 1 to 10 using a `for` loop.
+2. Calculate the sum of numbers from 1 to 5 using a `for` loop.
+3. Print the even numbers between 1 and 20 using a `for` loop.
+4. Create a list of fruits and print each fruit using a `for` loop.
+5. Print the multiplication table of 7 using a `for` loop.
+6. Calculate the factorial of a number entered by the user using a `for` loop.
+7. Print the first 5 square numbers using a `for` loop.
+8. Iterate through a string and print each character using a `for` loop.
+9. Print the Fibonacci sequence up to the 10th term using a `for` loop.
+10. Create a dictionary of country names and their capitals, then print them using a `for` loop.
+
+### While Loop Questions:
+11. Print the numbers from 1 to 5 using a `while` loop.
+12. Calculate the product of numbers from 1 to 4 using a `while` loop.
+13. Print the odd numbers between 1 and 15 using a `while` loop.
+14. Create a list of colors and print each color using a `while` loop.
+15. Print a countdown from 5 to 1 using a `while` loop.
+16. Ask the user to guess a number between 1 and 10 using a `while` loop, and give feedback.
+17. Print the squares of numbers from 1 to 6 using a `while` loop.
+18. Iterate through a sentence and print each word using a `while` loop.
+19. Calculate the sum of digits of a number entered by the user using a `while` loop.
+20. Implement a simple number guessing game using a `while` loop.
+
+Feel free to use these questions for practice and modify them as needed!
+
+
+
+
+
+
+Certainly! Here are some medium-level questions for Python exercises using `for` loop and `while` loop:
+
+### For Loop Questions:
+1. Print the prime numbers between 1 and 20 using a `for` loop.
+2. Calculate the average of a list of numbers using a `for` loop.
+3. Create a function to check if a given word is a palindrome using a `for` loop.
+4. Print a pattern of right-angled triangles using a `for` loop.
+5. Implement a program to find the greatest common divisor (GCD) of two numbers using a `for` loop.
+6. Create a program to generate a multiplication table with rows and columns using nested `for` loops.
+7. Write a function to find and print all the factors of a given number using a `for` loop.
+8. Implement a program to reverse a list using a `for` loop.
+9. Print the Pascal's triangle up to a certain number of rows using a `for` loop.
+10. Create a program to find and print the intersection of two lists using a `for` loop.
+
+### While Loop Questions:
+11. Implement a guessing game where the user has a limited number of attempts using a `while` loop.
+12. Calculate the factorial of a number using a `while` loop.
+13. Write a program to find the first N prime numbers using a `while` loop.
+14. Create a program to find and print the sum of digits of a number using a `while` loop.
+15. Implement a program to calculate the square root of a number using a `while` loop.
+16. Write a function to check if a number is Armstrong or not using a `while` loop.
+17. Print the Fibonacci sequence up to a certain value using a `while` loop.
+18. Implement a program to find and print the LCM (Least Common Multiple) of two numbers using a `while` loop.
+19. Create a simple text-based RPG game using a `while` loop for the main game loop.
+20. Write a program to perform matrix addition using nested `while` loops.
+
+These questions are designed to be a bit more challenging, providing a good medium-level exercise for your Python skills. Adjust the complexity based on your learning goals and preferences.

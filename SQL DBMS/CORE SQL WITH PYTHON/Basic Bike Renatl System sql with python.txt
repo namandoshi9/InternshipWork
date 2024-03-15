@@ -1,0 +1,126 @@
+import psycopg2
+from datetime import datetime
+
+# Function to connect to the PostgreSQL database
+def connect():
+    try:
+        conn = psycopg2.connect(
+            dbname="your_dbname",
+            user="your_username",
+            password="your_password",
+            host="your_host",
+            port="your_port"
+        )
+        print("Connected to the database")
+        return conn
+    except psycopg2.Error as e:
+        print("Unable to connect to the database")
+        print(e)
+        return None
+
+# Function to create tables if not exists
+def create_tables(conn):
+    try:
+        cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS bikes (
+                id SERIAL PRIMARY KEY,
+                model VARCHAR(100) NOT NULL,
+                price NUMERIC(10, 2) NOT NULL
+            )
+        """)
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS bookings (
+                id SERIAL PRIMARY KEY,
+                bike_id INT REFERENCES bikes(id),
+                start_date DATE NOT NULL,
+                end_date DATE NOT NULL,
+                booked_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        conn.commit()
+        print("Tables created successfully")
+    except psycopg2.Error as e:
+        print("Error creating tables")
+        print(e)
+
+# Function to show available bikes
+def show_bikes(conn):
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, model, price FROM bikes")
+        bikes = cursor.fetchall()
+        if bikes:
+            print("Available Bikes:")
+            for bike in bikes:
+                print(f"ID: {bike[0]}, Model: {bike[1]}, Price: {bike[2]}")
+        else:
+            print("No bikes available")
+    except psycopg2.Error as e:
+        print("Error fetching bikes")
+        print(e)
+
+# Function to book a bike
+def book_bike(conn, bike_id, start_date, end_date):
+    try:
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO bookings (bike_id, start_date, end_date) VALUES (%s, %s, %s)", (bike_id, start_date, end_date))
+        conn.commit()
+        print("Bike booked successfully")
+    except psycopg2.Error as e:
+        print("Error booking bike")
+        print(e)
+
+# Function to show past bookings
+def show_past_bookings(conn):
+    try:
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT b.id, b.start_date, b.end_date, b.booked_on, c.model, c.price
+            FROM bookings b
+            INNER JOIN bikes c ON b.bike_id = c.id
+            WHERE b.end_date < CURRENT_DATE
+        """)
+        past_bookings = cursor.fetchall()
+        if past_bookings:
+            print("Past Bookings:")
+            for booking in past_bookings:
+                print(f"Booking ID: {booking[0]}, Bike Model: {booking[4]}, Price: {booking[5]}, Start Date: {booking[1]}, End Date: {booking[2]}, Booked On: {booking[3]}")
+        else:
+            print("No past bookings")
+    except psycopg2.Error as e:
+        print("Error fetching past bookings")
+        print(e)
+
+# Main function
+def main():
+    conn = connect()
+    if conn is not None:
+        create_tables(conn)
+
+        while True:
+            print("\n1. Show available bikes")
+            print("2. Book a bike")
+            print("3. Show past bookings")
+            print("4. Exit")
+            choice = input("Enter your choice: ")
+
+            if choice == '1':
+                show_bikes(conn)
+            elif choice == '2':
+                bike_id = input("Enter the ID of the bike you want to book: ")
+                start_date = input("Enter the start date (YYYY-MM-DD): ")
+                end_date = input("Enter the end date (YYYY-MM-DD): ")
+                book_bike(conn, bike_id, start_date, end_date)
+            elif choice == '3':
+                show_past_bookings(conn)
+            elif choice == '4':
+                print("Exiting...")
+                break
+            else:
+                print("Invalid choice")
+
+        conn.close()
+
+if __name__ == "__main__":
+    main()

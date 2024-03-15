@@ -1,0 +1,159 @@
+import psycopg2
+from psycopg2 import Error
+
+def create_connection():
+    try:
+        conncetion = psycopg2.connect(
+            user = "postgres",
+            password = "96241",
+            host = "localhost",
+            port = "5432",
+            database = "RailwayBooking"
+        )
+        print("Connect to Database successfully....")
+        return conncetion
+    except Error as e:
+        print(f"Error connecting ... : {e}")
+        return None
+    
+                
+        
+def book_tickit(connection,booking_date,num_passengers,total_fare):
+    try:
+        cursor = connection.cursor()
+        
+        insert_query = '''
+        INSERT INTO bookings (booking_date,num_passengers,total_fare)
+        VALUES (%s, %s, %s)
+        '''
+        
+        cursor.execute(insert_query,(booking_date,num_passengers,total_fare))
+        
+        connection.commit()
+        
+        print("Record inserted successfully..")
+    
+    except Error as e:
+        print(f"Error inserting record in the database: {e}")
+        
+        
+def fetch_booking(conncetion,booking_id):
+    try:
+        cursor = conncetion.cursor()
+        
+        select_query = "SELECT * FROM bookings WHERE booking_id = %s"
+        
+        cursor.execute(select_query,(booking_id,))
+        
+        rows = cursor.fetchall()
+        print("fetched records : ")
+        for row in rows:
+            print(row)
+            
+    except Error as e:
+        print(f"Error fetching records : {e}")
+        
+  
+
+def update_booking(connection, booking_id, booking_date):
+    try:
+        cursor = connection.cursor()
+        
+        update_query = "UPDATE bookings SET booking_date = %s WHERE booking_id = %s"
+
+        cursor.execute(update_query, (booking_date, booking_id))
+        
+        connection.commit()
+        
+        print("Record update successfully")
+    except Error as e:
+        print(f"Error updating record : {e}")
+        
+        
+def delete_booking(connection, booking_id):
+    try:
+        cursor = connection.cursor()
+        
+        delete_query = "DELETE FROM bookings WHERE booking_id = %s"
+        
+        cursor.execute(delete_query, (booking_id,))
+        
+        connection.commit()
+        
+        print("Record delete successfully")
+        
+    except Error as e:
+        print(f"Error deleting record : {e}")
+
+
+  
+def get_tickit_booking():
+    booking_date = input("Enter booking date (YYYY-MM-DD): ")
+    num_passengers = input("Enter number of passengers : ")
+    total_fare = num_passengers * 50
+    return booking_date, num_passengers, total_fare
+
+
+def get_booking_input_for_update():
+    booking_id = int(input("Enter booking id to update : "))
+    booking_date = input("Enter booking date (YYYY-MM-DD): ")
+    return booking_id, booking_date
+
+
+
+def get_user_input_for_fetch():
+    booking_id = int(input("Enter booking id you want to show : "))
+    return booking_id
+
+
+
+def get_booking_input_for_delete():
+    booking_id = int(input("Enter booking id you want to delete : "))
+    return booking_id
+
+
+
+
+def display_menu():
+    print("\n\n1. Book Tickit")
+    print("2. Show Booking")
+    print("3. update Booking")
+    print("4. delete Booking")
+    print("5. Exit")
+    ch = input("Enter your choice : ")
+    return ch
+    
+def main():
+    connection = create_connection()
+    if connection is None:
+        return
+    
+    # create_table(connection)
+    
+    while True:
+        ch = display_menu()
+        
+        if ch == "1":
+            booking_date, num_passengers, total_fare = get_tickit_booking()
+            book_tickit(connection,booking_date, num_passengers, total_fare)
+            # print("select 2 for sometimes")
+        elif ch == "2":
+            booking_id = get_user_input_for_fetch()
+            fetch_booking(connection, booking_id)
+        elif ch == "3":
+            booking_id,booking_date = get_booking_input_for_update()
+            update_booking(connection,booking_id,booking_date)
+        elif ch == '4':
+            booking_id = get_booking_input_for_delete()
+            delete_booking(connection, booking_id)
+        elif ch == "5":
+            print("Exiting program..")
+            break
+        else:
+            print("Invalid choice....")
+    
+    connection.close()
+    
+if __name__ == "__main__":
+    main()
+    

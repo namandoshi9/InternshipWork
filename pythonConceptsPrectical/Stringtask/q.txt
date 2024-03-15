@@ -1,0 +1,5 @@
+#q1 txt = "Hello world!"
+# w = "Hello"    if word match word are reverse and retuen revers word and string
+# w = "NamoAgain" if word are not match return string at is it
+
+

@@ -1,0 +1,76 @@
+1. **Database Creation:**
+   - Design a database schema for managing student information in a school.
+   - Define tables for students, teachers, classes, grades, and any other relevant entities.
+
+2. **Table Creation:**
+   - Create a "Students" table with columns for student ID, name, date of birth, grade level, and contact information.
+   - Create a "Teachers" table with columns for teacher ID, name, subject taught, and contact information.
+   - Create a "Classes" table with columns for class ID, class name, teacher ID, and schedule.
+   - Create a "Grades" table with columns for student ID, class ID, date, and grade.
+
+3. **Data Insertion:**
+   - Insert records for several students, teachers, classes, and grades into their respective tables.
+   - Ensure that there are relationships established between students and classes, teachers and classes, and grades and students.
+
+4. **Data Retrieval (SELECT):**
+   - Retrieve the names and grade levels of all students.
+   - Retrieve the names and subjects taught by all teachers.
+   - Retrieve the class schedule for a specific class.
+   - Retrieve the grades of a specific student in all classes.
+
+5. **Filtering and Sorting:**
+   - Retrieve the names of students in a specific grade level, sorted alphabetically.
+   - Retrieve the names of teachers who teach a specific subject, sorted by their last name.
+   - Retrieve the classes scheduled on a particular day of the week.
+
+6. **Aggregate Functions:**
+   - Calculate the average grade of a specific student across all classes.
+   - Determine the highest and lowest grades in a particular class.
+   - Calculate the total number of students enrolled in the school.
+
+7. **Grouping Data:**
+   - Group students by their grade level and count the number of students in each grade.
+   - Group teachers by the subject they teach and list the number of teachers for each subject.
+
+8. **Joins:**
+   - Retrieve the names of students along with the classes they are enrolled in.
+   - Retrieve the names of teachers along with the classes they teach.
+   - Retrieve the grades of students along with the corresponding class names.
+
+9. **Subqueries:**
+   - Find students who have grades above the average grade of their class.
+   - List classes with more than 20 students enrolled.
+
+10. **Updating and Deleting Data:**
+    - Update the contact information of a specific student.
+    - Delete a student from the database along with their grades.
+    - Delete a class from the database along with its schedule.
+--------------------------------------------------------------------------------------------------------------------------------
+
+1. **Create a Database:**
+   - Write a SQL query to create a new database named "ExerciseDB".
+
+2. **Create Tables:**
+   - Within the "ExerciseDB" database, create a table named "Students" with the following columns: 
+     - StudentID (int, primary key)
+     - FirstName (varchar)
+     - LastName (varchar)
+     - Age (int)
+     - Grade (varchar)
+
+3. **Insert Data:**
+   - Insert at least 5 records into the "Students" table with sample data for each column.
+
+4. **Display Data:**
+   - Write a SQL query to display all the records in the "Students" table.
+
+5. **Update Data:**
+   - Update the record of the student with StudentID = 3 to change their Grade to "B".
+
+6. **Delete Data:**
+   - Delete the record of the student with StudentID = 5 from the "Students" table.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,20 @@
+Check if a number is positive, negative, or zero.
+Determine if a given number is even or odd.
+Check if a year is a leap year.
+Find the maximum of two numbers.
+Find the minimum of three numbers.
+Determine if a given character is a vowel or a consonant.
+Calculate the grade based on a given percentage.
+Check if a number is a prime number.
+Check if a number is divisible by both 5 and 7.
+Determine the season based on the month.
+Check if a year is a century year (ending in 00).
+Determine if a given string is a palindrome.
+Check if a string contains only alphabets.
+Calculate the discount based on the purchase amount.
+Check if a given number is a perfect square.
+Determine the eligibility for voting based on age.
+Check if a year is a leap year and a century year simultaneously.
+Check if a input contains only numeric.
+Write a program to check if a given number is a multiple of both 3 and 5.
+Create a program to calculate the sum of all prime numbers within a given range.

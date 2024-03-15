@@ -1,0 +1,115 @@
+create database db_name;
+
+use db_name;
+
+create table my_table(
+id int (10),
+name varchar (10)
+);
+
+create table my_table(
+id int (10) PRIMARY KEY,
+name varchar (10) NOT NULL
+);
+
+desc table_name;
+
+show databases;
+show tables;
+
+
+INT(10)
+DECIMAL(4,2)
+CHAR(20)
+VARCHAR(20)
+TEXT
+DATE
+DATETIME
+TIMESTAMPE
+
+select c_name,city from cust;
+
+select * from cust;
+
+DISTINCT used fro diffrent values
+select distinct city from cust;
+
+COUNT
+select count(distict city) from cust;
+
+WHERE
+select * from cust where city="mexico";
+select * from cust where c_id=1;
+select * from cust where c_id > 80;
+select city from cust where c_id < 10;
+
+
+ORDER BY
+select * from products order by price;
+select * from products order by price DESC;
+select * from products order by price ASC;
+select * from products order by ProductName;
+select * from products order by ProductName DESC;
+select * from customers order by country , c_name;
+select * from customers order by country ASC,c_name DESC;
+
+
+AND
+AND & OR & LIKE
+selct * from cust where country = "spain" and c_name LIKE "N%";
+select * from cust where country = "germany" and city = "Berlin" and PostalCode >
+12000;
+select * from cust where country = "Spain" And (customerName Like "G%" Or customerName like = "R%")
+
+
+OR
+select * from cust where country = "Germany" OR country = "Spain";
+select * from cust where country = "Berlin" or c_name LIKE '%G' or country = "Norway";
+select * from cust where country = "Spain" and (cut_name LIKE 'G%' or c_name like 'R%');
+
+
+
+NOT
+select * from cust where not country = "Spain"
+
+NOT LIKE
+select * from cust where c_name NOT LIKE 'A%';
+
+NOT BETWEEN
+select * from cust where c_id not between 10 AND 60;
+
+NOT IN
+select * from cust where city NOT IN ('PAris','London')
+
+NOT GREATER/LESS THAN
+select * from cust where NOT c_id > 50; 
+select * from cust where NOT c_id < 50;
+
+
+
+INSERT INTO
+insert into cust (c_id,c_name,add,city,p_code,country) values (01,"naman","liliya",365535,"Bharat")
+insert into cust (c_name,city,country) values ("naman","liliya","Bharat")
+insert into cust (c_name,city) values ("naman","liliya),("vivek","ahemdabad"),("rushit","bvn")
+
+
+select * from emp cross join department;
+select name,depname from emp cross join department;
+select * from emp,depa;
+
+
+
+select colname from table Inner join table
+2 ON colname = colname
+select emp_id from emp inner join dep ON empid = empid
+select emp.name, emp.depname from emp INNER JOIN dep ON emp.empid = dep.empid;
+
+
+select colname from tb1 left join tb2 on colnm = colnm;
+left tb -> right tb
+select e.name,d.depname from emp(left tb) LEFT JOin dep(right tb) ON emp.eid == dep.empid;
+
+
+
+
+

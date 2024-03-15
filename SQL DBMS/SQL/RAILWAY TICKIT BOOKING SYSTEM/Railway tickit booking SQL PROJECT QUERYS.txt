@@ -1,0 +1,178 @@
+a railway ticket booking system
+
+Tables:
+
+1. Users: To store information about users who book tickets.
+
+	user_id (Primary Key)
+	username
+	password
+	email
+	phone_number
+
+2. Trains: To store information about trains.
+
+	train_id (Primary Key)
+   	train_name
+   	source
+    	destination
+	departure_time
+   	arrival_time
+   	total_seats
+ 
+3. Bookings: To store information about bookings made by users.
+
+	booking_id (Primary Key)
+	user_id (Foreign Key referencing Users table)
+	train_id (Foreign Key referencing Trains table)
+	booking_date
+	num_passengers
+	total_fare
+
+4. (Optional) Passengers: If you want to store information about passengers in a separate table.
+	passenger_id (Primary Key)
+	booking_id (Foreign Key referencing Bookings table)
+	passenger_name
+	age
+	gender
+
+
+
+
+**INSERT 5 to 10 Recoreds for each table**
+
+
+
+1. **UPDATE**:
+   - Update the email of the user with user_id 3 to 'newemail@example.com'.
+   - Update the departure time of the train with train_id 2 to '11:00:00'.
+   - Update the total fare of the booking with booking_id 5 to 35.50.
+   - Update the phone number of all users from '1234567890' to '9876543210'.
+   - Update the destination of all trains departing after '15:00:00' to 'CityX'.
+
+
+
+
+3. **WHERE**:
+   - Select all users with email ending with '@example.com'.
+   - Select all trains departing from 'CityA'.
+   - Select all bookings made by user with user_id 2.
+   - Select all passengers with age greater than or equal to 25.
+   - Select all bookings made after '2024-02-08'.
+
+
+
+4. **ORDER BY**:
+   - Select all users ordered by username alphabetically.
+   - Select all trains ordered by departure time in ascending order.
+   - Select all bookings ordered by booking date in descending order.
+   - Select all passengers ordered by age in descending order.
+   - Select all trains ordered by total seats in descending order.
+
+
+
+5. **AND, OR, NOT, NULL Value**:
+   - Select all users with email ending with '@example.com' and whose phone_number is not null.
+   - Select all trains departing from either 'CityA' or 'CityB'.
+   - Select all bookings made by user with user_id 3 or 4.
+   - Select all passengers whose age is not null.
+   - Select all trains where departure_time is null.
+
+
+
+6. **Aggregate Functions**:
+   - Calculate the total number of users.
+   - Calculate the average total seats of all trains.
+   - Find the maximum fare among all bookings.
+   - Count the number of bookings made on '2024-02-09'.
+   - Calculate the sum of ages of all passengers.
+
+
+
+7. **Wildcard, LIKE**:
+   - Select all users whose username starts with 'user'.
+   - Select all trains whose destination contains 'City'.
+   - Select all bookings made on '2024-02-09' with booking_id ending with '5'.
+   - Select all passengers whose name contains 'Passenger'.
+   - Select all trains with train_name like '%Express%'.
+
+
+
+8. **IN**:
+   - Select all users with user_id 1, 3, and 5.
+   - Select all trains departing from either 'CityC', 'CityD', or 'CityE'.
+   - Select all bookings made by user with user_id 2, 4, or 6.
+   - Select all passengers with age 20, 25, or 30.
+   - Select all trains with train_id 2, 4, or 6.
+
+
+
+9. **BETWEEN**:
+   - Select all users with user_id between 3 and 7.
+   - Select all trains departing between '10:00:00' and '16:00:00'.
+   - Select all bookings made between '2024-02-08' and '2024-02-10'.
+   - Select all passengers with age between 20 and 40.
+   - Select all trains with total_seats between 200 and 300.
+
+
+
+10. **UNION**:
+    - Select all users with email ending with '@example.com' UNION Select all users with phone_number starting with '987'.
+    - Select all trains departing from 'CityA' UNION Select all trains arriving at 'CityB'.
+    - Select all bookings made on '2024-02-09' UNION Select all bookings made on '2024-02-08'.
+    - Select all passengers with age less than 25 UNION Select all passengers with age greater than 40.
+    - Select all trains with total_seats less than 250 UNION Select all trains with total_seats greater than 300.
+
+
+
+
+11. **GROUP BY**:
+    - Count the number of bookings made by each user.
+    - Calculate the average total fare for each train.
+    - Find the maximum age among passengers for each booking.
+    - Count the number of bookings made on each booking_date.
+    - Calculate the sum of total seats for trains departing from each source.
+
+
+
+
+
+1. **Basic Subquery**:
+   - Select all users who have made bookings.
+
+2. **Subquery with Aggregation**:
+   - Find the average age of passengers who have booked tickets.
+
+
+3. **Subquery with IN Operator**:
+   - Select all bookings made by users who have booked tickets.
+
+
+
+
+2. **DELETE**:
+   - Delete the user with username 'user6'.
+   - Delete all bookings made by the user with user_id 7.
+   - Delete all trains with less than 200 total seats.
+   - Delete all bookings made before '2024-02-08'.
+   - Delete all passengers with age less than 18.
+
+
+
+Here are five SQL query questions that involve ALTER statements:
+
+1. **Add a new column**:
+   - Add a column named 'address' to the Users table to store the user's address.
+
+2. **Drop a column**:
+   - Remove the 'phone_number' column from the Users table.
+
+3. **Modify column data type**:
+   - Change the data type of the 'departure_time' column in the Trains table from TIME to DATETIME.
+
+4. **Add a foreign key constraint**:
+   - Add a foreign key constraint to the Bookings table, linking the 'user_id' column to the 'user_id' column in the Users table.
+
+5. **Rename a table**:
+   - Rename the Passengers table to PassengerDetails.
+

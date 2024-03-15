@@ -1,0 +1,5 @@
+1. for loop and while loop
+-> Both for loop and while loop is used to execute the statements
+->The major difference between for loop and while loop is that
+ForLoop : a for loop is used to iterate over a sequence of items such as a python tuple,list,string or range.the loop will execute a block of statements for each item in the sequence. used for fixed sequence of items. used for when number of iteration was already known.
+WhileLoop : a while loop is used to repeatedly executea block of statements while a condition is true. The loop will continue to run as long as the condition remains true or wwhile loop requires an initial condition. used for when number of iteration was unknown

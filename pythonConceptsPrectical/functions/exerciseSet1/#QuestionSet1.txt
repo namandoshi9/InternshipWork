@@ -1,0 +1,29 @@
+1. **Hello Function:**
+   Write a function named `say_hello` that prints "Hello, Python!" when called.
+
+2. **Addition Function:**
+   Create a function named `add_numbers` that takes two parameters and returns their sum.
+
+3. **Square Function:**
+   Define a function named `calculate_square` that takes a number as input and returns its square.
+
+4. **Greeting Function:**
+   Write a function named `personalized_greeting` that takes a name as a parameter and prints a greeting message with the name.
+
+5. **Even or Odd Function:**
+   Implement a function named `even_or_odd` that takes an integer as input and prints whether it's even or odd.
+
+6. **Maximum Function:**
+   Create a function called `find_maximum` that takes two numbers as parameters and returns the maximum of the two.
+
+7. **Factorial Function:**
+   Write a function named `calculate_factorial` that computes the factorial of a given number.
+
+8. **StringLength Function:**
+   Define a function named `string_length` that takes a string as input and returns its length.
+
+9. **Sum of List Function:**
+   Write a function named `calculate_sum` that takes a list of numbers as input and returns their sum.
+
+10. **Palindrome Check Function:**
+    Create a function named `is_palindrome` that takes a string as input and returns True if it's a palindrome, False otherwise.

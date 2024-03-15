@@ -1,0 +1,46 @@
+1. **Sum of Numbers:**
+   Write a program that calculates and prints the sum of all numbers from 1 to 100.
+
+2. **Factorial Calculator:**
+   Implement a program to calculate the factorial of a given number using a loop.
+
+3. **Multiplication Table:**
+   Write a program that generates the multiplication table for a given number.
+
+4. **Even or Odd:**
+   Create a program that takes a user input and prints whether the number is even or odd.
+
+5. **Palindrome Checker:**
+   Implement a program to check if a given string is a palindrome.
+
+6. **Fibonacci Sequence:**
+   Write a program to generate the Fibonacci sequence up to a certain number of terms.
+
+7. **Prime Number Checker:**
+   Create a program that checks if a given number is prime.
+
+8. **Reverse a String:**
+   Write a program to reverse a given string.
+
+10. **Count Vowels:**
+    Write a program to count the number of vowels in a given string.
+
+11. **List Sum:**
+    Given a list of numbers, calculate and print the sum of all elements.
+
+12. **Find Maximum:**
+    Write a program to find the maximum value in a list of numbers.
+
+13. **Common Elements:**
+    Given two lists, find and print the common elements between them.
+
+16. **Power of a Number:**
+    Implement a program to calculate the power of a number using a loop.
+
+17. **String Length:**
+    Write a program to find and print the length of a given string without using the built-in `len()` function.
+
+18. **Temperature Converter:**
+    Create a program that converts temperatures between Celsius and Fahrenheit.
+
+

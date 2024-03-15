@@ -1,0 +1,182 @@
+-- create table rooms(
+-- 	room_id serial primary key,
+-- 	room_number varchar(10),
+-- 	capacity int,
+-- 	occupancy int,
+-- 	hostel_block varchar(20)
+-- );
+
+-- create table students(
+-- 	student_id serial primary key,
+-- 	student_name varchar(100),
+-- 	s_dob date,
+-- 	gender char(1),
+-- 	phone varchar(20),
+-- 	email varchar(100),
+-- 	address varchar(255),
+-- 	room_id int,
+-- 	FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
+-- 	ON DELETE CASCADE
+-- 	ON UPDATE CASCADE
+-- );
+
+
+-- CREATE TABLE fees (
+--     fee_id INT PRIMARY KEY,
+--     student_id INT,
+--     amount DECIMAL(10, 2),
+--     payment_date DATE,
+--     FOREIGN KEY (student_id) REFERENCES students(student_id)
+-- 	   ON DELETE CASCADE
+-- 	   ON UPDATE CASCADE
+-- );
+
+
+-- create table hostel_block(
+-- 	block_id serial primary key,
+-- 	block_name varchar(50)
+-- );
+
+-- create table room_allocations(
+-- 	allocation_id serial primary key,
+-- 	student_id int,
+-- 	room_id int,
+-- 	allocation_date date,
+-- 	foreign key (student_id) references students(student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+-- 	foreign key (room_id) references rooms(room_id) ON DELETE CASCADE ON UPDATE CASCADE
+-- );
+
+-- create table visitors(
+-- 	visitor_id serial primary key,
+-- 	visitor_name varchar(100),
+-- 	purpose varchar(255),
+-- 	visit_date date,
+-- 	student_id int,
+-- 	foreign key (student_id) references students(student_id) 	ON DELETE CASCADE ON UPDATE CASCADE
+-- );
+
+
+-- INSERT INTO rooms (room_id, room_number, capacity, occupancy, hostel_block) VALUES
+-- (101, '101', 2, 2, 'Block A'),
+-- (102, '102', 3, 1, 'Block A'),
+-- (103, '103', 4, 0, 'Block B'),
+-- (104, '104', 2, 1, 'Block B'),
+-- (105, '105', 3, 2, 'Block C');
+
+
+-- INSERT INTO students (student_id, student_name, s_dob, gender, phone, email, address, room_id) VALUES
+-- (1001, 'John Doe', '1998-05-15', 'M', '123-456-7890', 'john.doe@example.com', '123 Main St', 101),
+-- (1002, 'Jane Smith', '2000-08-20', 'F', '987-654-3210', 'jane.smith@example.com', '456 Elm St', 102),
+-- (1003, 'David Brown', '1999-03-10', 'M', '555-555-5555', 'david.brown@example.com', '789 Oak St', 103),
+-- (1004, 'Emily Johnson', '2001-11-25', 'F', '111-222-3333', 'emily.johnson@example.com', '101 Pine St', 104),
+-- (1005, 'Michael Wilson', '1997-12-05', 'M', '999-999-9999', 'michael.wilson@example.com', '202 Maple St', 105);
+
+
+-- INSERT INTO hostel_Block (block_id, block_name) VALUES
+-- (1, 'Block A'),
+-- (2, 'Block B'),
+-- (3, 'Block C');
+
+-- INSERT INTO fees (fee_id, student_id, amount, payment_date) VALUES
+-- (1, 1001, 500, '2023-01-10'),
+-- (2, 1002, 600, '2023-02-15'),
+-- (3, 1003, 550, '2023-03-20'),
+-- (4, 1004, 650, '2023-04-25'),
+-- (5, 1005, 700, '2023-05-30');
+
+-- INSERT INTO visitors (visitor_id, visitor_name, purpose, visit_date, student_id) VALUES
+-- (1, 'Mary Lee', 'Friend Visit', '2023-01-15', 1001),
+-- (2, 'Robert Johnson', 'Parent Visit', '2023-02-20', 1002),
+-- (3, 'Sarah Brown', 'Friend Visit', '2023-03-25', 1003),
+-- (4, 'Chris Davis', 'Parent Visit', '2023-04-30', 1004),
+-- (5, 'Jessica Taylor', 'Friend Visit', '2023-05-05', 1005);
+
+-- INSERT INTO room_allocations (allocation_id, student_id, room_id, allocation_date) VALUES
+-- (1, 1001, 101, '2023-01-01'),
+-- (2, 1002, 102, '2023-01-02'),
+-- (3, 1003, 103, '2023-01-03'),
+-- (4, 1004, 104, '2023-01-04'),
+-- (5, 1005, 105, '2023-01-05');
+
+
+-- select * from fees
+-- select * from hostel_block
+-- select * from room_allocations
+-- select * from rooms
+-- select * from students
+-- select * from visitors
+
+-- update students set phone = '123-456-7899' where student_id = 1001
+-- update rooms set capacity = 4 where room_number = '101'
+-- update students set email = replace(email, 'example.com' , 'newdomain.com') where email like '%@example.com'
+-- update students set gender = 'F' where room_id = (select room_id from rooms where room_number = '102')
+-- update hostel_block set block_name = 'NewBlockName' where block_id = 1
+
+
+-- delete from students where student_id = 1005
+-- delete from rooms where occupancy = 0
+-- delete from visitors where visit_date > '2023-01-01'
+-- delete from students where student_name LIKE 'A%'
+-- delete from fees where payment_date < now() - INTERVAL '1 year'
+
+
+-- select student_name,phone from students
+-- select room_number,capacity from rooms where hostel_block = 'Block A'
+-- select student_name from students where gender = 'M'
+-- select rooms.room_number, students.student_name FROM rooms JOIN students ON rooms.room_id = students.room_id WHERE rooms.occupancy = 1;
+
+
+-- select student_name from students where student_name like 'J%'
+-- select email from students where email like '@gmail.com'
+-- select student_name from students where student_name like '%Doe%'
+-- select room_number from rooms where room_number LIKE '1%'
+-- select student_name from students where student_name like '_a%'
+
+
+-- select student_name from students where room_id IN (select room_id from rooms where capacity > 3)
+-- select student_name from students where student_id not in(select student_id from fees)
+-- select room_number,capacity from rooms where hostel_block = 'Block B'
+-- select student_name from students where room_id in (select room_id from rooms order by occupancy DESC limit 1)
+-- select student_name from students where room_id in (select room_id from rooms where capacity > (select avg(capacity) from rooms))
+
+
+
+-- select avg(capacity) from rooms
+-- select count(student_id) from students
+-- select max(amount) from fees
+-- select avg(extract(year from age(s_dob))) from students
+-- select count(*) from rooms where occupancy > 2
+
+
+-- select room_number,capacity from rooms where capacity between 2 and 4;
+-- select student_name,email from students where student_id in (select student_id from fees where amount > 100)
+-- select student_name,phone from students where s_dob between '2000-01-01' AND '2002-12-31'
+-- select students.student_name,students.email from students join visitors on students.student_id = visitors.student_id group by students.student_name, students.email having count(visitors.visitor_id) > 1
+
+
+-- select student_name from students order by student_name
+-- select room_number,capacity from rooms order by capacity desc
+-- select students.student_name, fees.amount from students join fees on students.student_id = fees.student_id order by fees.amount desc
+-- select visitors.visitor_name,visitors.visit_date from visitors order by visitors.visit_date
+-- select student_name,extract(year from age(s_dob)) from students order by age desc 
+
+
+-- alter table students add column emergency_contact varchar(20)
+-- alter table room_allocations add constraint fk_student_id foreign key (student_id) references students(student_id)
+-- alter table fees add column status varchar(20) 
+-- alter table fees alter column status set default 'pending' 
+-- alter table students add constraint unique_email unique(email) 
+-- alter table rooms add constraint non_negetive check (occupancy >= 0)
+-- alter table students rename column phone to contact_number
+-- alter table students drop column emergency_contact
+-- alter table hostel_block rename to Blocks
+-- alter table fees alter column amount type numeric
+
+
+
+-- select * from fees
+-- select * from blocks
+-- select * from room_allocations
+-- select * from rooms
+-- select * from students
+-- select * from visitors

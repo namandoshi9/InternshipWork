@@ -1,0 +1,33 @@
+1) __init__()
+-> __init__ method in Python is used to initialize objects of a class. It is also called a constructor.
+-> The __init__() function is called automatically every time the class is being used to create a new object.
+-> is an instance method that initilizes a newly created object.it takes the objects as its first argument followed by additional argument.
+-> The method takes the object as its first argument(self).
+
+
+
+2) What is self..?
+-> Self represents the instance of the class. 
+-> By using the “self”  we can access the attributes and methods of the class in Python.
+-> It is used to access variables that belongs to the class.
+-> self is variable which content the memory refrence of current object.(for assign value/access value)
+-> memory allocation for object (optional)
+
+
+
+3) __str__()
+-> The __str__() method returns a human-readable, or informal, string representation of an object.
+-> This method is called by the built-in print() , str() , and format() functions.
+-> If you don't define a __str__() method for a class, then the built-in object implementation calls the __repr__() method instead.(representation)
+
+
+
+4) pass
+-> Use the pass keyword when you do not want to add any other properties or methods to the class. 
+
+
+
+5) super()
+-> super() function that will make the child class inherit all the methods and properties from its parent.
+-> By using the super() function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its parent.
+-> Other Words The super function in Python is used to access methods of the immediate parent class.

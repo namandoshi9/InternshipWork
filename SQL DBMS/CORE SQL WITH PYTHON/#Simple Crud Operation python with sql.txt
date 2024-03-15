@@ -1,0 +1,166 @@
+import psycopg2
+from psycopg2 import Error
+
+def create_connection():
+    try:
+        conncetion = psycopg2.connect(
+            user = "postgres",
+            password = "96241",
+            host = "localhost",
+            port = "5432",
+            database = "q1"
+        )
+        print("Connect to Database successfully....")
+        return conncetion
+    except Error as e:
+        print(f"Error connecting ... : {e}")
+        return None
+    
+    
+def create_table(connection):
+    try:
+       
+        cursor = connection.cursor()
+
+        create_table_query = '''
+        CREATE TABLE IF NOT EXISTS users (
+            id SERIAL PRIMARY KEY,
+            name TEXT,
+            email TEXT
+        )
+        '''
+        cursor.execute(create_table_query)
+
+        connection.commit()
+
+        print("Table created successfully")
+    except Error as e:
+        print(f"Error creating table: {e}")
+        
+        
+        
+def insert_record(connection,name,email):
+    try:
+        cursor = connection.cursor()
+        
+        insert_query = '''
+        INSERT INTO users (name, email)
+        VALUES (%s, %s)
+        '''
+        
+        cursor.execute(insert_query,(name,email))
+        
+        connection.commit()
+        
+        print("Record inserted successfully..")
+    
+    except Error as e:
+        print(f"Error inserting record in the database: {e}")
+        
+        
+def fetch_records(conncetion):
+    try:
+        cursor = conncetion.cursor()
+        
+        select_query = "SELECT * FROM users"
+        
+        cursor.execute(select_query)
+        
+        rows = cursor.fetchall()
+        print("fetched records : ")
+        for row in rows:
+            print(row)
+            
+    except Error as e:
+        print(f"Error fetching records : {e}")
+        
+  
+
+def update_record(connection, user_id, new_email):
+    try:
+        cursor = connection.cursor()
+        
+        update_query = "UPDATE users SET email = %s WHERE id = %s"
+
+        cursor.execute(update_query, (new_email, user_id))
+        
+        connection.commit()
+        
+        print("Record update successfully")
+    except Error as e:
+        print(f"Error updating record : {e}")
+        
+        
+def delete_record(connection, user_id):
+    try:
+        cursor = connection.cursor()
+        
+        delete_query = "DELETE FROM users WHERE id = %s"
+        
+        cursor.execute(delete_query, (user_id,))
+        
+        connection.commit()
+        
+        print("Record delete successfully")
+        
+    except Error as e:
+        print(f"Error deleting record : {e}")
+  
+def get_user_input_for_create():
+    name = input("Enter user name : ")
+    email = input("Enter user email : ")
+    return name, email
+
+def get_user_input_for_update():
+    user_id = int(input("Enter user id to update : "))
+    new_email = input("Enter new Email : ")
+    return user_id, new_email
+
+def get_user_input_for_delete():
+    user_id = int(input("Enter user id you want to delete : "))
+    return user_id
+
+
+
+
+def display_menu():
+    print("\n\n1. Create User Record")
+    print("2. Fetch records")	
+    print("3. update records")
+    print("4. delete records")
+    print("5. Exit")
+    ch = input("Enter your choice : ")
+    return ch
+    
+def main():
+    connection = create_connection()
+    if connection is None:
+        return
+    
+    create_table(connection)
+    
+    while True:
+        ch = display_menu()
+        
+        if ch == "1":
+            name, email = get_user_input_for_create()
+            insert_record(connection,name,email)
+        elif ch == "2":
+            fetch_records(connection)
+        elif ch == "3":
+            user_id,new_email = get_user_input_for_update()
+            update_record(connection,user_id,new_email)
+        elif ch == '4':
+            user_id = get_user_input_for_delete()
+            delete_record(connection, user_id)
+        elif ch == "5":
+            print("Exiting program..")
+            break
+        else:
+            print("Invalid choice....")
+    
+    connection.close()
+    
+if __name__ == "__main__":
+    main()
+    
